@@ -1,0 +1,19 @@
+# зависимости
+node_modules/
+
+# сборка
+dist/
+build/
+
+# временные файлы
+*.log
+*.tmp
+
+# конфиги окружения
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
