@@ -1,7 +1,10 @@
 .hero {
-  display: flex;
-  justify-content: space-between;
   padding: 160px 55px;
+  .hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
   .heroTitle {
     font-size: 72px;
     font-weight: 700;
@@ -15,6 +18,16 @@
     color: #475569;
     margin-bottom: 24px;
   }
+  input {
+    width: 65%;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 17px 18px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+  }
   img {
     width: 600px;
     height: 440px;
@@ -23,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    gap: 16px;
   }
   .partners {
     display: flex;
