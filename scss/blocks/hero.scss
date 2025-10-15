@@ -1,8 +1,15 @@
 .hero {
+  background-image: image-set(
+    url(../../img/Icons.png) 1x,
+    url(../../img/deco.png) 2x
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
   padding: 160px 55px;
   .hero-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 80px;
   }
   .heroTitle {
@@ -10,6 +17,7 @@
     font-weight: 700;
     line-height: 110%;
     margin-bottom: 24px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
   }
   .heroSubtitle {
     font-size: 18px;
@@ -27,6 +35,7 @@
     color: #cbd5e1;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   img {
     width: 600px;
@@ -44,5 +53,12 @@
     border-radius: 8px;
     justify-content: space-between;
     padding: 16px;
+    svg {
+      cursor: pointer;
+      transition: all 1s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }

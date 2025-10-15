@@ -15,6 +15,9 @@
       font-size: 32px;
       font-weight: 700;
       color: black;
+      &::hover {
+        cursor: pointer;
+      }
     }
     .navigation {
       display: flex;
