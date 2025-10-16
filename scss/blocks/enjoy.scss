@@ -1,0 +1,17 @@
+.enjoying {
+  padding: 80px 55px;
+  .enjoy-wrapper {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    img {
+      width: 600px;
+      height: 464px;
+    }
+    h2 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+  }
+}

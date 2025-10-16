@@ -20,12 +20,15 @@
       }
     }
     .navigation {
-      display: flex;
-      gap: 52px;
-      a {
-        text-decoration: none;
+      ul {
+        list-style-type: none;
+        display: flex;
+        gap: 52px;
+      }
+      li {
         font-size: 16px;
         color: black;
+        cursor: pointer;
         span {
           &::after {
             background-color: black;
