@@ -12,7 +12,7 @@
         <div class="container">
           <div class="header-wrapper">
             <a href="index.html" class="logo">magnifico</a>
-            <nav class="navigation" aria-label="Main navigation">
+            <nav class="navigation" aria-label="Main navigation" id="main-nav">
               <ul id="nav-list">
                 <li class="link-underline">
                   <a href="#" target="_blank">
@@ -42,11 +42,11 @@
                   </a>
                 </li>
               </ul>
-              <div class="burger" id="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-              </div>
+              <button class="burger" id="burger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </button>
             </nav>
             <div class="header-btns">
               <a href="#" class="primary-btn" target="_blank"
@@ -144,7 +144,32 @@
           </div>
         </div>
       </section>
-      <section class="tools" id="tools"></section>
+      <section class="tools" id="tools">
+        <div class="container">
+          <div class="tools-wrapper">
+            <div class="tools-info">
+              <h2>
+                Get all the tools <br />
+                your team needs
+              </h2>
+              <p>
+                Empower your team with a complete toolkit designed to streamline
+                collaboration, boost productivity, and turn ideas into results —
+                all in one place.
+              </p>
+              <a href="#" class="primary-btn" target="_blank"
+                ><span class="title-of-link"
+                  >Check the tools
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#linkArrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <img src="img/tools.webp" alt="tools" />
+          </div>
+        </div>
+      </section>
       <section class="problems" id="problems"></section>
       <section class="workflow" id="workflow"></section>
       <section class="community" id="community"></section>
