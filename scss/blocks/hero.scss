@@ -1,10 +1,11 @@
 .hero {
-  padding: 160px 55px 94px 55px;
+  padding: 160px 0 94px 0;
   .hero-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     gap: 80px;
+    padding: 0;
   }
   .heroTitle {
     font-size: 72px;
