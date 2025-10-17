@@ -27,12 +27,25 @@
       }
       li {
         font-size: 16px;
-        color: black;
         cursor: pointer;
+        a {
+          text-decoration: none;
+          color: black;
+        }
         span {
           &::after {
             background-color: black;
           }
+        }
+      }
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 7px;
+        .line {
+          width: 25px;
+          height: 3px;
+          background-color: black;
         }
       }
     }
@@ -40,6 +53,32 @@
       display: flex;
       gap: 16px;
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    .header-wrapper {
+      .navigation {
+        ul {
+          position: absolute;
+          right: 0;
+          top: 40px;
+          width: 200px;
+          flex-direction: column;
+          display: none;
+          &:active {
+            display: flex;
+          }
+        }
+        .burger {
+          display: flex;
+        }
+      }
+      .header-btns {
+        display: none;
+      }
     }
   }
 }

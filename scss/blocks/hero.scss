@@ -125,7 +125,6 @@
 
 @media (max-width: 800px) {
   .hero {
-    padding: 160px 15px;
     input {
       width: 65%;
     }
@@ -161,10 +160,10 @@
 
 @media (max-width: 560px) {
   .hero {
-    padding: 115px 15px;
+    padding: 115px 0 48px 0;
     img {
-      width: 381px;
-      height: 281px;
+      width: 361px;
+      height: 261px;
     }
     input {
       width: 50%;
@@ -195,7 +194,6 @@
 
 @media (max-width: 500px) {
   .hero {
-    padding: 115px 0;
     .partners {
       padding: 16px 30px;
     }

@@ -9,39 +9,59 @@
   <body>
     <main>
       <header class="header" id="header">
-        <div class="header-wrapper container">
-          <a href="index.html" class="logo">magnifico</a>
-          <nav class="navigation">
-            <ul>
-              <li href="#" class="link-underline" target="_blank">
-                <span>Products</span>
-              </li>
+        <div class="container">
+          <div class="header-wrapper">
+            <a href="index.html" class="logo">magnifico</a>
+            <nav class="navigation" aria-label="Main navigation">
+              <ul id="nav-list">
+                <li class="link-underline">
+                  <a href="#" target="_blank">
+                    <span>Products</span>
+                  </a>
+                </li>
 
-              <li href="#" class="link-underline" target="_blank">
-                <span>Solutions</span>
-              </li>
+                <li class="link-underline">
+                  <a href="#" target="_blank">
+                    <span>Solutions</span>
+                  </a>
+                </li>
 
-              <li href="#" class="link-underline" target="_blank">
-                <span>Services</span>
-              </li>
-              <li href="#" class="link-underline" target="_blank">
-                <span>Help Center</span>
-              </li>
-              <li href="#" class="link-underline" target="_blank">
-                <span>Pricing</span>
-              </li>
-            </ul>
-          </nav>
-          <div class="header-btns">
-            <a href="#" class="primary-btn" target="_blank"
-              ><span>Log in</span></a
-            >
-            <a href="#" class="cta-btn" target="_blank"
-              ><span>Sign Up Free</span>
-              <svg width="14" height="14">
-                <use xlink:href="img/sprite.svg#arrow" aria-hidden="true"></use>
-              </svg>
-            </a>
+                <li class="link-underline">
+                  <a href="#" target="_blank">
+                    <span>Services</span>
+                  </a>
+                </li>
+                <li class="link-underline">
+                  <a href="#" target="_blank">
+                    <span>Help Center</span>
+                  </a>
+                </li>
+                <li class="link-underline">
+                  <a href="#" target="_blank">
+                    <span>Pricing</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="burger" id="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </nav>
+            <div class="header-btns">
+              <a href="#" class="primary-btn" target="_blank"
+                ><span>Log in</span></a
+              >
+              <a href="#" class="cta-btn" target="_blank"
+                ><span>Sign Up Free</span>
+                <svg width="14" height="14">
+                  <use
+                    xlink:href="img/sprite.svg#arrow"
+                    aria-hidden="true"
+                  ></use>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -110,7 +130,7 @@
               <a href="#" class="primary-btn" target="_blank"
                 ><span class="title-of-link"
                   >See how it helped others
-                  <svg width="14" height="14">
+                  <svg width="14" height="14" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#linkArrow"></use>
                   </svg>
                 </span>
@@ -130,5 +150,6 @@
       <section class="community" id="community"></section>
       <footer class="footer" id="footer"></footer>
     </main>
+    <script src="js/burger.js"></script>
   </body>
 </html>
