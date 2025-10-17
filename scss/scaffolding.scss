@@ -184,3 +184,27 @@ html {
   align-items: center;
   width: fit-content;
 }
+
+@media (max-width: 1024px) {
+  .link-underline {
+    span {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .cta-btn {
+    span {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .primary-btn {
+    span {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
