@@ -208,3 +208,14 @@ html {
     }
   }
 }
+
+.mobile-container {
+  padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 561px) {
+  .mobile-container {
+    display: none;
+  }
+}

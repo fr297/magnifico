@@ -2,7 +2,7 @@
   .problems-wrapper {
     background-image: image-set(
       url(../../img/problems.webp) 1x,
-      url(../../img/problemsRetina.webp) 3x
+      url(../../img/problemsBg.webp) 4x
     );
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,6 +27,83 @@
       line-height: 160%;
       margin-bottom: 24px;
       color: white;
+    }
+    .problems-link {
+      color: white;
+      span {
+        &::after {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .problems {
+    .problems-wrapper {
+      div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .problems {
+    .problems-wrapper {
+      padding: 30px;
+      h2 {
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+@media (max-width: 561px) {
+  .problems {
+    .container {
+      display: none;
+    }
+  }
+}
+
+.problems-mobile-wrapper {
+  background-image: image-set(
+    url(../../img/problemsMobile.webp) 1x,
+    url(../../img/problemsMobileRetina.webp) 4x
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 48px 24px;
+  h2 {
+    width: 80%;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    color: white;
+    margin-bottom: 24px;
+  }
+  .problems-link {
+    color: white;
+    span {
+      &::after {
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .problems-mobile-wrapper {
+    h2 {
+      width: 100%;
     }
   }
 }
