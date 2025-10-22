@@ -1,5 +1,12 @@
 .community {
   .community-wrapper {
+    background-image: image-set(
+      url(../../img/community.webp) 1x,
+      url(../../img/communityRetina.webp) 3x
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
     padding: 80px;
     display: flex;
     justify-content: center;
@@ -9,6 +16,7 @@
       font-size: 56px;
       font-weight: 700;
       margin-bottom: 24px;
+      color: white;
     }
     p {
       font-weight: 400;
@@ -16,6 +24,7 @@
       font-size: 18px;
       text-align: center;
       margin-bottom: 24px;
+      color: white;
     }
     .cta-btn {
       font-size: 24px;
