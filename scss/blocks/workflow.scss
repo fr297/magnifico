@@ -34,9 +34,22 @@
       color: #475569;
       margin-bottom: 24px;
     }
+    #tab-content {
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
     .tab:last-child {
       border-right: none;
       width: 34%;
+    }
+    .hide-left {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    .hide-right {
+      opacity: 0;
+      transform: translateX(10px);
     }
     h2 {
       font-size: 56px;

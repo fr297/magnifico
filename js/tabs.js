@@ -5,10 +5,10 @@
   // Тексты для каждого таба
   const tabTexts = {
     research:
-      "Egestas fringilla aliquam leo, habitasse arcu varius lorem elit. Neque pellentesque donec et tellus ac varius tortor.",
-    plan: "Sed cursus ante dapibus diam. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
+      "Explore the market, collect ideas, and analyze data together with your team. All notes, links, and discussions are stored in one shared workspace, accessible to everyone.",
+    plan: "Plan projects, assign tasks, and track progress in real time. The whole team can see priorities and deadlines, keeping work transparent and organized. You’ll always know who’s responsible for what and how the project is moving forward.",
     design:
-      "Ut tincidunt tincidunt erat. Curabitur vestibulum aliquam leo. Praesent egestas tristique nibh. In hac habitasse platea dictumst.",
+      "Create prototypes and visual concepts together with your team in one place. Share mockups, leave comments, and make edits without losing context. Collaborative design has never been easier, faster, or more efficient.",
   };
 
   // Вспомогательная: вернёт текущую активную вкладку (если есть)
