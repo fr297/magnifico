@@ -15,5 +15,24 @@
         }
       }
     }
+    nav {
+      ul {
+        list-style-type: none;
+        display: flex;
+        gap: 24px;
+        a {
+          text-decoration: none;
+          color: #475569;
+        }
+        li {
+          font-size: 16px;
+          span {
+            &::after {
+              background-color: #475569;
+            }
+          }
+        }
+      }
+    }
   }
 }
