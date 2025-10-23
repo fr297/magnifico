@@ -1,0 +1,19 @@
+.footer {
+  .footer-wrapper {
+    padding: 92px 0;
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      span {
+        color: #475569;
+        transition: all 0.4s ease;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
