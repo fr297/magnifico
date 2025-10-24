@@ -36,3 +36,44 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .footer {
+    .footer-wrapper {
+      padding: 24px 0;
+      flex-direction: column;
+      gap: 28px;
+      p {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .footer {
+    .footer-wrapper {
+      nav {
+        ul {
+          .mobile-none {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .footer {
+    .footer-wrapper {
+      nav {
+        ul {
+          gap: 12px;
+        }
+      }
+    }
+  }
+}
