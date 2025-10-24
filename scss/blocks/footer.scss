@@ -57,6 +57,7 @@
     .footer-wrapper {
       nav {
         ul {
+          gap: 27px;
           .mobile-none {
             display: none;
           }
@@ -67,6 +68,18 @@
 }
 
 @media (max-width: 380px) {
+  .footer {
+    .footer-wrapper {
+      nav {
+        ul {
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 365px) {
   .footer {
     .footer-wrapper {
       nav {
