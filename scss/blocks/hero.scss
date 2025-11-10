@@ -3,8 +3,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 160px 0 94px 0;
+  align-items: center;
   .hero-wrapper {
     position: relative;
     display: flex;
@@ -165,7 +165,7 @@
 
 @media (max-width: 560px) {
   .hero {
-    padding: 115px 0 48px 0;
+    padding: 70px 0 0 0;
     img {
       width: 361px;
       height: 261px;
@@ -216,6 +216,8 @@
 
 @media (max-width: 380px) {
   .hero {
+    height: fit-content;
+    padding: 90px 0 0 0;
     .email-cta {
       gap: 4px;
     }
