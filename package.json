@@ -7,9 +7,9 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "gulp",
+    "build": "gulp",
+    "preview": "gulp"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
@@ -18,10 +18,13 @@
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-import": "^2.29.1",
+    "gulp": "^5.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
     "postcss": "^8.4.38",
     "prettier": "^3.3.3",
-    "sass": "^1.93.2",
-    "vite": "^7.1.4"
+    "sass": "^1.94.2"
   },
   "browserslist": [
     ">0.5%",
@@ -29,6 +32,8 @@
     "not dead"
   ],
   "dependencies": {
-    "@splidejs/splide": "^4.1.4"
+    "@babel/preset-env": "^7.28.5",
+    "@splidejs/splide": "^4.1.4",
+    "browser-sync": "^3.0.4"
   }
 }
