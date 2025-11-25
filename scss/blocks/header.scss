@@ -1,5 +1,5 @@
 .header {
-  z-index: 999;
+  z-index: 998;
   position: fixed;
   top: 0;
   background-color: white;
@@ -38,24 +38,95 @@
           }
         }
       }
-      .burger {
-        display: none;
-        flex-direction: column;
-        gap: 7px;
-        background-color: white;
-        border: none;
-        .line {
-          width: 25px;
-          height: 3px;
-          background-color: black;
-        }
-      }
     }
     .header-btns {
       display: flex;
       gap: 16px;
       align-items: center;
     }
+  }
+}
+
+.burger-wrapp {
+  display: none;
+  .burger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    background-color: white;
+    border: none;
+    z-index: 999;
+    transition: all 0.5s ease;
+    .line {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      transition: all 0.5s ease;
+    }
+  }
+  .burger-info {
+    display: none;
+  }
+  .burger-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .burger-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    list-style-type: none;
+    li {
+      font-size: 22px;
+      font-weight: 400;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.open {
+  padding: 24px 25px;
+  position: absolute;
+  z-index: 998;
+  width: 100%;
+  background-color: white;
+  transition: all 0.6s ease;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  .burger-btn {
+    display: block;
+    gap: 0;
+    position: absolute;
+    right: 15px;
+    top: 24px;
+    z-index: 999;
+    .line {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 15px;
+        right: 0;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        transform: rotate(-53deg);
+        position: absolute;
+        top: 15px;
+        right: 0;
+      }
+    }
+  }
+  .burger-info {
+    display: block;
+    z-index: 999;
   }
 }
 
@@ -74,11 +145,11 @@
             display: flex;
           }
         }
-        .burger {
+      }
+      .burger-wrapp {
+        display: block;
+        .burger-btn {
           display: flex;
-          &.open {
-            display: flex;
-          }
         }
       }
       .header-btns {
