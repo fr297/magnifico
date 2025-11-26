@@ -1,42 +1,117 @@
 import gulp from "gulp";
-import dartSass from "sass";
 import gulpSass from "gulp-sass";
-import browserSync from "browser-sync";
-import babel from "gulp-babel";
+import sassPackage from "sass";
+import autoprefixerPlugin from "gulp-autoprefixer";
+import cleanCSS from "gulp-clean-css";
+import concat from "gulp-concat";
 import terser from "gulp-terser";
+import rename from "gulp-rename";
+import sourcemaps from "gulp-sourcemaps";
+import plumber from "gulp-plumber";
+import { deleteAsync } from "del";
+import browserSyncModule from "browser-sync";
 
-const sass = gulpSass(dartSass);
+const browserSync = browserSyncModule.create();
+const sass = gulpSass(sassPackage);
 
+// Пути
+const paths = {
+  src: {
+    html: "*.html",
+    scss: "scss/**/*.scss",
+    js: "js/**/*.js",
+    img: "img/**/*",
+    fonts: "fonts/**/*",
+  },
+  dist: {
+    base: "docs",
+    html: "docs",
+    css: "docs/css",
+    js: "docs/js",
+    img: "docs/img",
+    fonts: "docs/fonts",
+  },
+};
+
+// Очистка docs
+export function clean() {
+  return deleteAsync([paths.dist.base + "/**/*", "!" + paths.dist.base]);
+}
+
+// HTML
 export function html() {
   return gulp
-    .src("./*.html")
-    .pipe(gulp.dest("./dist"))
+    .src(paths.src.html)
+    .pipe(gulp.dest(paths.dist.html))
     .pipe(browserSync.stream());
 }
 
+// SCSS
 export function styles() {
   return gulp
-    .src("scss/**/*.scss")
+    .src("scss/main.scss")
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("dist/css"))
+    .pipe(autoprefixerPlugin())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(paths.dist.css))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest(paths.dist.css))
     .pipe(browserSync.stream());
 }
 
+// JS
 export function scripts() {
   return gulp
-    .src("js/**/*.js")
-    .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(terser())
-    .pipe(gulp.dest("dist/js"))
+    .src(paths.src.js)
+    .pipe(plumber())
+    .pipe(gulp.dest(paths.dist.js))
     .pipe(browserSync.stream());
 }
 
-export function serve() {
-  browserSync.init({ server: "./" });
-  gulp.watch("./*.html", html);
-  gulp.watch("scss/**/*.scss", styles);
-  gulp.watch("js/**/*.js", scripts);
-  gulp.watch("dist/*.html").on("change", browserSync.reload);
+// Images
+export function images() {
+  return gulp
+    .src(paths.src.img)
+    .pipe(gulp.dest(paths.dist.img))
+    .pipe(browserSync.stream());
 }
 
-export default gulp.series(html, styles, scripts, serve);
+// Fonts
+export function fonts() {
+  return gulp
+    .src(paths.src.fonts)
+    .pipe(gulp.dest(paths.dist.fonts))
+    .pipe(browserSync.stream());
+}
+
+// Server
+export function serve(done) {
+  browserSync.init({
+    server: {
+      baseDir: paths.dist.base,
+    },
+    port: 3000,
+    notify: false,
+  });
+
+  gulp.watch(paths.src.html, html);
+  gulp.watch(paths.src.scss, styles);
+  gulp.watch(paths.src.js, scripts);
+  gulp.watch(paths.src.img, images);
+  gulp.watch(paths.src.fonts, fonts);
+
+  done();
+}
+
+// Build
+export const build = gulp.series(
+  clean,
+  gulp.parallel(html, styles, scripts, images, fonts)
+);
+
+export default gulp.series(build, serve);
