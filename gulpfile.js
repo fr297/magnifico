@@ -76,9 +76,8 @@ export function scripts() {
 // Images
 export function images() {
   return gulp
-    .src(paths.src.img)
-    .pipe(gulp.dest(paths.dist.img))
-    .pipe(browserSync.stream());
+    .src("src/img/**/*.{jpg,png,svg,gif,webp}")
+    .pipe(gulp.dest("docs/img"));
 }
 
 // Fonts
