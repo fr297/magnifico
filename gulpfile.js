@@ -1,10 +1,8 @@
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
-import sassPackage from "sass";
+import * as sassPackage from "sass";
 import autoprefixerPlugin from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
-import concat from "gulp-concat";
-import terser from "gulp-terser";
 import rename from "gulp-rename";
 import sourcemaps from "gulp-sourcemaps";
 import plumber from "gulp-plumber";
@@ -18,9 +16,8 @@ const sass = gulpSass(sassPackage);
 const paths = {
   src: {
     html: "*.html",
-    scss: "scss/**/*.scss",
+    scss: "scss/main.scss",
     js: "js/**/*.js",
-    img: "img/**/*",
     fonts: "fonts/**/*",
   },
   dist: {
@@ -34,9 +31,6 @@ const paths = {
 };
 
 // Очистка docs
-export function clean() {
-  return deleteAsync([paths.dist.base + "/**/*", "!" + paths.dist.base]);
-}
 
 // HTML
 export function html() {
@@ -49,15 +43,13 @@ export function html() {
 // SCSS
 export function styles() {
   return gulp
-    .src("scss/main.scss")
+    .src(paths.src.scss)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixerPlugin())
-    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.dist.css))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(cleanCSS())
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.dist.css))
@@ -71,13 +63,6 @@ export function scripts() {
     .pipe(plumber())
     .pipe(gulp.dest(paths.dist.js))
     .pipe(browserSync.stream());
-}
-
-// Images
-export function images() {
-  return gulp
-    .src("src/img/**/*.{jpg,png,svg,gif,webp}")
-    .pipe(gulp.dest("docs/img"));
 }
 
 // Fonts
@@ -101,16 +86,12 @@ export function serve(done) {
   gulp.watch(paths.src.html, html);
   gulp.watch(paths.src.scss, styles);
   gulp.watch(paths.src.js, scripts);
-  gulp.watch(paths.src.img, images);
   gulp.watch(paths.src.fonts, fonts);
 
   done();
 }
 
 // Build
-export const build = gulp.series(
-  clean,
-  gulp.parallel(html, styles, scripts, images, fonts)
-);
+export const build = gulp.series(gulp.parallel(html, styles, scripts, fonts));
 
 export default gulp.series(build, serve);
