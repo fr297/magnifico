@@ -1205,8 +1205,8 @@ html {
   }
 }
 .problems-mobile-wrapper {
-  background-image: -webkit-image-set(url(../../img/problemsMobile.webp) 1x, url(../../img/problemsMobileRetina.webp) 4x);
-  background-image: image-set(url(../../img/problemsMobile.webp) 1x, url(../../img/problemsMobileRetina.webp) 4x);
+  background-image: -webkit-image-set(url(../img/problemsMobile.webp) 1x, url(../img/problemsMobileRetina.webp) 4x);
+  background-image: image-set(url(../img/problemsMobile.webp) 1x, url(../img/problemsMobileRetina.webp) 4x);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 48px 24px;
@@ -1391,8 +1391,8 @@ html {
     display: none;
   }
   .community .community-mobile {
-    background-image: -webkit-image-set(url(../../img/commMob.webp) 1x, url(../../img/commMobRet.webp) 3x);
-    background-image: image-set(url(../../img/commMob.webp) 1x, url(../../img/commMobRet.webp) 3x);
+    background-image: -webkit-image-set(url(../img/commMob.webp) 1x, url(../img/commMobRet.webp) 3x);
+    background-image: image-set(url(../img/commMob.webp) 1x, url(../img/commMobRet.webp) 3x);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
